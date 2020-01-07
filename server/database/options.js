@@ -1,9 +1,9 @@
 require('dotenv').config();
 
 module.exports = {
-  host: 'ms',
-  user: 'root',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
   password: process.env.MYSQL_ROOT_PASSWORD,
-  database: 'twitter_clone',
+  database: process.env.DB_NAME,
   port: '3306'
 };

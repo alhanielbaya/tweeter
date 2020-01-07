@@ -7,7 +7,6 @@ import ReactDOM from 'react-dom';
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import { composeWithDevTools } from 'redux-devtools-extension';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -35,10 +34,7 @@ const rootReducer = combineReducers({
   tweets: tweetsReducer,
   socket: socketReducer
 });
-const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(thunk))
-);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const root = document.getElementById('root') as HTMLElement;
 

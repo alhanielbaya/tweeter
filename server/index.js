@@ -39,15 +39,17 @@ app.use('/auth', require('./routes/auth'));
 app.use('/users', require('./routes/users'));
 app.use('/tweets', require('./routes/tweets'));
 
-const port = process.env.PORT || port;
+const port = proccess.env.SERVER_PORT || 8000;
 
 if (IN_PROD) {
-  app.use(express.static('../client/build'));
+  app.use(express.static(path.resolve('./client/build')));
 
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    res.sendFile(path.resolve('./client/build/index.html'));
   });
 }
+
+console.log(path.resolve('./'));
 
 io.on('connection', function(socket) {
   const followModel = require('./Models/Follow');
@@ -69,4 +71,5 @@ io.on('connection', function(socket) {
     });
   });
 });
+
 server.listen(port, () => console.log(`Server running on port ${port}`));

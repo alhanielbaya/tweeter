@@ -32,7 +32,7 @@ const TweetBox = () => {
     }
     const ta: any = document.getElementById('tweet-area');
     const data = { profile: profile, post: tweet };
-    Axios.post('http://localhost:8000/tweets/post', data).then(() => {
+    Axios.post('tweets/post', data).then(() => {
       ta.value = '';
       setHasMore(true);
       setOffset(0);

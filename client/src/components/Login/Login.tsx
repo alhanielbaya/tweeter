@@ -18,7 +18,7 @@ const Login: React.FC = () => {
 
   function loginCB(status: boolean) {
     dispatch(setAuth(status));
-    Axios.get('http://localhost:8000/users/').then((res: { data: { profile: Iprofile } }) => {
+    Axios.get('users/').then((res: { data: { profile: Iprofile } }) => {
       dispatch(setProfile(res.data.profile));
       history.push('/home');
     });

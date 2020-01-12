@@ -62,13 +62,11 @@
     "@types/redux-devtools": "^3.0.47",
     "@types/redux-devtools-extension": "^2.13.2",
     "@types/redux-thunk": "^2.1.0",
-    "@types/socket.io-client": "^1.4.32",
-    "redux-devtools": "^3.5.0",
-    "redux-devtools-extension": "^2.13.8"
+    "@types/socket.io-client": "^1.4.32"
   },
   "main": "index.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "proxy": "http://localhost:8000/"
+  "proxy": ""
 }

@@ -9,7 +9,7 @@ export async function sanitizeInput(profile: Iprofile): Promise<Iprofile> {
     ? splittedAtSign.substring(0, 14)
     : splittedAtSign;
 
-  const res: { data: { uid: number } } = await axios.get('http://localhost:8000/users/getId');
+  const res: { data: { uid: number } } = await axios.get('users/getId');
   const id = res.data.uid;
   const uniquedAtSign = `${cutAtSign}${id}`;
 
@@ -22,7 +22,7 @@ export async function sanitizeInput(profile: Iprofile): Promise<Iprofile> {
 }
 
 export function login(data: { profile: Iprofile }, cb: (x: boolean) => void) {
-  axios.post('http://localhost:8000/auth/login', data).then((res: { status: number }) => {
+  axios.post('auth/login', data).then((res: { status: number }) => {
     if (res.status === 200) {
       cb(true);
     } else {

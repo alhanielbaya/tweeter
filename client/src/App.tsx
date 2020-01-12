@@ -25,9 +25,9 @@ const App: React.FC = () => {
   isAuthenticated().then(isAuthenticated => {
     dispatch(setAuth(isAuthenticated));
     if (isAuthenticated) {
-      Axios.get('http://localhost:8000/users/').then((user: { data?: { profile: Iprofile } }) => {
+      Axios.get('users/').then((user: { data?: { profile: Iprofile } }) => {
         if (user.data) dispatch(setProfile(user.data.profile));
-        Axios.get('http://localhost:8000/users/followedUsers').then(
+        Axios.get('users/followedUsers').then(
           (followedUsers: { data: number[] }) => {
             dispatch(setFollowedUsers(followedUsers.data));
           }

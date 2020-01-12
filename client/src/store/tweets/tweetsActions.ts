@@ -8,7 +8,7 @@ export function loadMore(
   type = 'latest'
 ): Promise<boolean> {
   return new Promise((resolve, reject) => {
-    Axios.get(`http://localhost:8000/tweets/${type}?offset=${offset}&limit=${limit}`).then(res => {
+    Axios.get(`tweets/${type}?offset=${offset}&limit=${limit}`).then(res => {
       const tweets = res.data.tweets;
       dispatch({ type: APPEND_TWEETS, payload: tweets });
       if (tweets.length === limit) {
@@ -26,7 +26,7 @@ export async function setTweets(
   firstReload = false
 ) {
   if (firstReload) dispatch({ type: SET_PENDING, payload: true });
-  Axios.get(`http://localhost:8000/tweets/latest?offset=${offset}&limit=${limit}`).then(res => {
+  Axios.get(`tweets/latest?offset=${offset}&limit=${limit}`).then(res => {
     const tweets = res.data.tweets;
     dispatch({ type: SET_TWEETS, payload: tweets });
   });
@@ -39,7 +39,7 @@ export async function getFollowedTweets(
   firstReload = false
 ) {
   if (firstReload) dispatch({ type: SET_PENDING, payload: true });
-  Axios.get(`http://localhost:8000/tweets/followed?offset=${offset}&limit=${limit}`).then(res => {
+  Axios.get(`tweets/followed?offset=${offset}&limit=${limit}`).then(res => {
     const tweets = res.data.tweets;
     dispatch({ type: SET_TWEETS, payload: tweets });
   });

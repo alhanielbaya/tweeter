@@ -1,4 +1,4 @@
-POST http://localhost:8000/auth/login
+POST auth/login
 Content-Type: application/json
 
 {
@@ -12,19 +12,19 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8000/tweets/latest
+GET tweets/latest
 
 ###
-GET http://localhost:8000/tweets/followed
+GET tweets/followed
 
 ###
-GET http://localhost:8000/users/followedUsers
+GET users/followedUsers
 
 ###
-GET http://localhost:8000/users/getId
+GET users/getId
 
 ###
-POST http://localhost:8000/users/follow
+POST users/follow
 Content-Type: application/json
 
 {
@@ -32,7 +32,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:8000/tweets/post
+POST tweets/post
 Content-Type: application/json
 
 {
@@ -47,8 +47,8 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8000/auth
+GET auth
 
 ###
 
-DELETE  http://localhost:8000/auth/logout
+DELETE  auth/logout

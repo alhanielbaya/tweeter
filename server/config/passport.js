@@ -9,7 +9,7 @@
 //         clientID:
 //           '343873122331-554k1urv7koadivfqikh0v8dgjedntdk.apps.googleusercontent.com',
 //         clientSecret: 'mS3Ul1n4bY8HhkTEZb5f0dB0',
-//         callbackURL: 'http://localhost:8000/login/callback'
+//         callbackURL: 'login/callback'
 //       },
 //       function(accessToken, refreshToken, profile, done) {
 //         console.log('accessToken', accessToken);

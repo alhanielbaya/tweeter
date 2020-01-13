@@ -14,6 +14,7 @@ CREATE TABLE tweets(
     tid int AUTO_INCREMENT, 
     primary key(tid), 
     uid int,
+    post varchar(140),
     email varchar(64), 
     name varchar(64), 
     imageUrl TEXT, 

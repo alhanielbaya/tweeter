@@ -16,7 +16,6 @@ router.get('/latest', (req, res) => {
       res.json({ tweets: tweets });
     })
     .catch(err => {
-      res.sendStatus(500);
       res.json({ error: err });
     });
 });
@@ -41,7 +40,6 @@ router.post('/post', auth, (req, res) => {
   const post = req.body.post;
 
   tweetModel.addTweet(profile, post).catch(err => {
-    res.sendStatus(500);
     res.json({ error: err });
   });
   res.sendStatus(200);

@@ -1,5 +1,5 @@
-import { IgoogleRes } from './oauthTypes';
 import { sanitizeInput, login } from './oauthHelpers';
+import { IgoogleRes } from './oauthTypes';
 
 export async function googleSuccess(
   response: IgoogleRes,

@@ -1,6 +1,10 @@
 import { login, sanitizeInput } from './oauthHelpers';
+import { IfacebookRes } from './oauthTypes';
 
-export async function facebookSuccess(response: any, cb: (x: boolean) => void) {
+export async function facebookSuccess(
+  response: IfacebookRes,
+  cb: (x: boolean) => void
+) {
   const res = response;
   const unsanitizedProfile = { imageUrl: res.picture.data.url, ...res };
 

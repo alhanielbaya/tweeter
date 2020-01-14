@@ -1,9 +1,7 @@
-require('dotenv').config()
+require('dotenv').config();
 const express = require('express');
 
 const app = express();
-
-
 
 const path = require('path');
 const server = require('http').Server(app);
@@ -11,10 +9,7 @@ const server = require('http').Server(app);
 // Socket.IO
 const io = require('socket.io')(server);
 
-
 const IN_PROD = process.env.NODE_ENV === 'production' ? true : false;
-
-
 
 // Connect to database
 const userModel = require('./Models/User');
@@ -52,17 +47,15 @@ const port = process.env.SERVER_PORT || 8080;
 if (IN_PROD) {
   app.use(express.static(path.resolve('./client/build')));
 
-
   app.get('*', (req, res) => {
     res.sendFile(path.resolve('./client/build/index.html'));
   });
 }
 
-
-io.on('connection', function (socket) {
+io.on('connection', function(socket) {
   const followModel = require('./Models/Follow');
 
-  socket.on('follow user', function (data) {
+  socket.on('follow user', function(data) {
     const { uid, uidToFollow } = data;
     followModel.followUser(uidToFollow, uid).then(() => {
       followModel.queryFollowedUsers(uid).then(followedUsers => {
@@ -70,7 +63,7 @@ io.on('connection', function (socket) {
       });
     });
   });
-  socket.on('unfollow user', function (data) {
+  socket.on('unfollow user', function(data) {
     const { uid, uidToUnFollow } = data;
     followModel.unFollowUser(uidToUnFollow, uid).then(() => {
       followModel.queryFollowedUsers(uid).then(followedUsers => {

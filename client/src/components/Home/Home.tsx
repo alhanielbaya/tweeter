@@ -11,7 +11,7 @@ const Home = () => {
     <div className='home-container'>
       <div className='middle-container' id='sidebar-exit'>
         <Nav></Nav>
-        <TweetBox></TweetBox>
+        <Route exact path='/home' component={TweetBox} />
         <Route exact path='/home' component={Latest} />
         <Route exact path='/followed' component={Followed} />
       </div>

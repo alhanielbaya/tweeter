@@ -5,5 +5,5 @@ ENV MYSQL_ROOT_PASSWORD=secret
 # Delete/Comment out the line below after initialization
 
 COPY ./init.sql /docker-entrypoint-initdb.d/
-
+RUN chmod 1777 /tmp
 

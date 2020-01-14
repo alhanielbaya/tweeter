@@ -14,6 +14,7 @@ These are the main technologies used to build the foundadtions of the app.
 - [Socket.IO](https://socket.io/) - For real-time data transfers
 - [MySQL](https://www.mysql.com/) with [Docker](https://www.docker.com/) - Used as database
 - [Nginx](https://www.nginx.com/) - As proxy server for deployment
+- [Amazon Web Services](https://aws.amazon.com/) - Used as the web server for the [live demo](https://tweeterdemo.xyz)
 
 ### Minor Technologies
 

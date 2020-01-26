@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Nav.scss';
 import SideBar from './SideBar/SideBar';
+import { useLocation } from 'react-router-dom';
 
 const Nav = () => {
-  const [yOffSet, setY] = React.useState(window.pageYOffset);
+  const [yOffSet, setY] = useState(window.pageYOffset);
+  const location = useLocation();
+
+  const [currentPageName, setCurrentPageName] = useState('Home');
 
   function handleClick(e: any) {
     const sidebar: any = document.getElementById('mobile-sidebar');
@@ -20,6 +24,16 @@ const Nav = () => {
 
   React.useEffect(() => {
     window.addEventListener('scroll', responsiveNavBar);
+    switch (location.pathname) {
+      case '/home':
+        setCurrentPageName('Home');
+        break;
+      case '/followed':
+        setCurrentPageName('Followed Tweets');
+        break;
+      default:
+        break;
+    }
 
     return () => {
       window.removeEventListener('scroll', responsiveNavBar);
@@ -64,7 +78,7 @@ const Nav = () => {
           <g></g>
         </svg>
 
-        <h1>Home</h1>
+        <h1>{currentPageName}</h1>
       </div>
     </>
   );

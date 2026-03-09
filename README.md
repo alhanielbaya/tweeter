@@ -28,6 +28,3 @@ These are the main technologies used to build the foundadtions of the app.
 
 This project is licensed under the ISC License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
-
-- Inspired by [techlead's](https://www.youtube.com/channel/UC4xKdmAXFh4ACyhpiQ_3qBw) twitter clone
